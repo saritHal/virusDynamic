@@ -51,10 +51,11 @@ namespace ExRotem
         //UpMotation() calc for each virus if lost its resistance or develop resistance
         public void setMotation(string m1)
         {
-            m1 = "2";
+            m1 = "222222";
             int a = r.Next(1, 1000);
             if (a <= 5)
                 this.IsResistanceM1 = !this.IsResistanceM1;
         }
+        
     }
 }
