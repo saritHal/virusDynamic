@@ -1,0 +1,10 @@
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\bin\Debug\ExNew.exe.config
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\bin\Debug\ExNew.exe
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\bin\Debug\ExNew.pdb
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\obj\Debug\ExNew.csprojAssemblyReference.cache
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\obj\Debug\ExNew.Form1.resources
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\obj\Debug\ExNew.Properties.Resources.resources
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\obj\Debug\ExNew.csproj.GenerateResource.cache
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\obj\Debug\ExNew.csproj.CoreCompileInputs.cache
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\obj\Debug\ExNew.exe
+C:\Users\sarit\OneDrive\שולחן העבודה\ExNew\ExNew\obj\Debug\ExNew.pdb
