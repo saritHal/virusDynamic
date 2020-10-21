@@ -8,7 +8,7 @@ namespace ExRotem
 {
     class Patient
     {
-        public double LastPrecents = 0.1;
+        public double LastRun = 0.1;
         public List<Virus> ListViruses { get; set; }
         public int VirusNum { get; set; }
         public int CellsNum { get; set; }
@@ -100,7 +100,7 @@ namespace ExRotem
         //calc if there is Increase in the Number of the viruses , compare to last run
         public bool CalcIncreas()
         {
-            if (this.LastPrecents > this.VirusNum)
+            if (this.LastRun > this.VirusNum)
                 return false;
             return true;
 
