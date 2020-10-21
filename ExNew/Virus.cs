@@ -12,7 +12,6 @@ namespace ExRotem
         public double ChanceIncrease { get; set; }
         public double ChanceClean { get; set; }
         public double Motation { get; set; }
-        public bool IsResistanceM1 { get; set; }
         public Dictionary<string, bool> Medicines { get; set; }
 
         static Random r = new Random();
@@ -23,9 +22,8 @@ namespace ExRotem
             this.ChanceIncrease = increase;
             this.ChanceClean = clean;
             this.Motation = motation;
-            this.IsResistanceM1 = false;
             this.Medicines = new Dictionary<string, bool>();
-            for (int i = 0; i < 5; i++)
+            for (int i = 1; i < 6; i++)
                 this.Medicines.Add("m" + i, false);
         }
         //isClean() function return true if the virus died and false if it still alive
@@ -49,12 +47,11 @@ namespace ExRotem
 
         }
         //UpMotation() calc for each virus if lost its resistance or develop resistance
-        public void setMotation(string m1)
+        public void setMotation(string medicineNumber)
         {
-            m1 = "222222";
             int a = r.Next(1, 1000);
             if (a <= 5)
-                this.IsResistanceM1 = !this.IsResistanceM1;
+                this.Medicines[medicineNumber] = !this.Medicines[medicineNumber];
         }
         
     }

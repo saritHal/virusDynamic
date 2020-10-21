@@ -26,11 +26,16 @@ namespace ExRotem
             this.lastVirus = this.VirusNum;
         }
     
+        //function removes all the clean viruses in Update
         private void UpdateCleanState()
         {
            this.ListViruses.RemoveAll(x => x.isClean() == true);
             this.VirusNum = this.ListViruses.Count();
+
         }
+        //OVERLOADING
+        //for each Virus send to function that check if this virus multiplies and returns boolean
+        // if Yes add new Virus to the List Of Viruses
         private void UpdateIncreaseState()
         {
 
@@ -42,28 +47,40 @@ namespace ExRotem
             this.VirusNum = this.ListViruses.Count();
             
         }
-        private void updateMotation(string m1)
+        //^do the same active like the last just when the patient gets medicine
+        private void UpdateIncreaseState(List<string> m1)
         {
-            this.ListViruses.ForEach(v => v.setMotation(m1));
-        }
 
-        private void UpdateIncreaseState(string m1)
-        {
             foreach (Virus item in this.ListViruses.ToList())
             {
-                if (item.IsResistanceM1 && item.isIncrease(this.VirusNum, this.CellsNum))
+                int found = 0;
+                foreach (var medicine in m1)
+                    if (item.Medicines[medicine] == true)
+                        found ++;
+                if (found==m1.Count() && item.isIncrease(this.VirusNum, this.CellsNum))
                 {
                     Virus descendent = new Virus(0.1, 0.03, 0.005);
                     //descendent.IsResistanceM1 = true;
 
-                   this.ListViruses.Add(descendent);
+                    this.ListViruses.Add(descendent);
                 }
-            
+
+            }
+            this.VirusNum = this.ListViruses.Count();
+
+        }
+        //when the patient gets a medicine this function update the Motation 
+        private void updateMotation(List<string> medicinesList)
+        {
+            foreach (var item in medicinesList)
+            {
+                this.ListViruses.ForEach(v => v.setMotation(item));
             }
             
+           
         }
 
-
+        //UpdatePatient() does the Update to Patient
         public void UpdatePatient()
         {
             this.lastVirus = this.VirusNum;
@@ -71,18 +88,22 @@ namespace ExRotem
             this.UpdateIncreaseState();
         }
 
-        public void UpdatePatient(string s1)
+        //UpdatePatient() does the Update to Patient and gets list of medicines the patient gets
+        public void UpdatePatient(List<string> s1)
         {
             this.lastVirus = this.VirusNum;
             this.UpdateCleanState();
             this.updateMotation(s1);
             this.UpdateIncreaseState(s1);
-
         }
 
+        //calc if there is Increase in the Number of the viruses , compare to last run
         public bool CalcIncreas()
         {
-            return (this.VirusNum > this.lastVirus);
+            if (this.LastPrecents > this.VirusNum)
+                return false;
+            return true;
+
         }
            
     }
