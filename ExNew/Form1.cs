@@ -22,7 +22,7 @@ namespace ExNew
         //
         private void button1_Click(object sender, EventArgs e)
         {
-            p.LastPrecents = p.VirusNum;
+            p.LastRun = p.VirusNum;
             for (int i = 0; i < this.numericUpDown1.Value; i++)
                 p.UpdatePatient();
             
